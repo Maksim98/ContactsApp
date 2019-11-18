@@ -6,17 +6,32 @@ using System.Windows.Forms;
 
 namespace NoteAppUI
 {
-    static class Program
+    public class Person
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        private int _age;
+        public int Age
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            get { return _age; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Возраст должен быть меньше 0, а был " +
+                    value);
+                }
+                else
+                    _age = value;
+            }
+        }
+    }
+    public class Program
+    {
+        public static void Main()
+        {
+            Person person = new Person();
+            person.Age = 28; //Aналогично вызову person.SetAge(28)
+            Console.WriteLine(person.Age);
+            //Аналогично вызову Console.WriteLine(person.GetAge())
         }
     }
 }
