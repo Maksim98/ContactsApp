@@ -6,16 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NoteApp;
 using System.Windows.Forms;
 
 namespace NoteAppUI
 {
-
-    public partial class Form1 : Form//Комментарий
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+            var project = new Project(new List<Contact>());
         }
     }
 }
