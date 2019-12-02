@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
-    public class Project
+    public class Project //класс для добавления всех контактов в проект
     {
         public List<Contact> Contacts { get; }
 

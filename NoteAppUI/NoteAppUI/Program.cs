@@ -12,9 +12,8 @@ namespace NoteAppUI
         public static void Main()
         {
             NumberPhone numberPhone = new NumberPhone();
-            numberPhone.Number = 79515936616; //Aналогично вызову person.SetAge(28)
-            Console.WriteLine(numberPhone.Number);
-            //Аналогично вызову Console.WriteLine(person.GetAge())
+            numberPhone.Number = 7951593616; //Aналогично вызову person.SetAge(28)
+            Console.WriteLine(numberPhone.Number); //Аналогично вызову Console.WriteLine(person.GetAge())
         }
     }
 }

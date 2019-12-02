@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
-    public class Contact: ICloneable
+    public class Contact: ICloneable //класс для добавления контактов
     {
         private NumberPhone _numberPhone;
         private String _name;
-        public String Name
+        public String Name //поле для добавления имени
         {
             get { return _name; }
             set
@@ -26,7 +26,7 @@ namespace NoteApp
         }
     
         private String _surname;
-        public String Surame
+        public String Surame//поле для добавления фамилии
         {
             get { return _surname; }
             set
@@ -40,7 +40,7 @@ namespace NoteApp
 
             }
         }
-        private DateTime _birthsday;
+        private DateTime _birthsday;//поле для добавления дня рождения
         public DateTime Birthsday
         {
             get { return _birthsday; }
@@ -56,7 +56,7 @@ namespace NoteApp
             }
         }
 
-        private String _email;
+        private String _email;//поле для добавления почты E-mail
         public String Email
         {
             get { return _email; }
@@ -71,7 +71,7 @@ namespace NoteApp
 
             }
         }
-        private String _id;
+        private String _id;//поле для добавления id
         public String ID
         {
             get { return _id; }
