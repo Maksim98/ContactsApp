@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace NoteAppUI
 {
-    public partial class MainForm : Form
+    public partial class Form1 : Form//Комментарий
     {
         public MainForm()
         {
