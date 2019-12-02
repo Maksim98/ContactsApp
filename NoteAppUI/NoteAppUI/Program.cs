@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NoteApp;
 using System.Windows.Forms;
 
 namespace NoteAppUI
 {
-    static class Program
+    public class Program
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            NumberPhone numberPhone = new NumberPhone();
+            numberPhone.Number = 7951593616; //Aналогично вызову person.SetAge(28)
+            Console.WriteLine(numberPhone.Number); //Аналогично вызову Console.WriteLine(person.GetAge())
         }
     }
 }
