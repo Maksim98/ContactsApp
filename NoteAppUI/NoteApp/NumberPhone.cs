@@ -6,22 +6,58 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
-    public class NumberPhone //класс для добавления номера телефона
+    /// <summary>
+    /// Contact's phone number.
+    /// </summary>
+    public class NumberPhone : ICloneable
     {
-        private long _number; //поле добавления номера телефона и проверки на правильность ввода
+        #region Private fields
+
+        /// <summary>
+        /// Phone number.
+        /// </summary>
+        private long _number;
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets phone number.
+        /// </summary>
         public long Number
         {
-            get { return _number; }
+            get => _number;
             set
             {
-                if (value.ToString().Length == 11 && value.ToString().First() == '7')
+                const long MinValueNumber = 79000000000;
+                const long MaxValueNumber = 79999999999;
+
+                if (value < MinValueNumber || value > MaxValueNumber)
                 {
-                    _number = value;
+                    throw new ArgumentException(
+                        "Phone number must be between " + MinValueNumber + " and " +
+                        MaxValueNumber + ", but was entered " + value);
                 }
-                else
-                    throw new ArgumentException("Введите номер телефона начиная с 7 и общее кол-во цифр должно быть равно 11" + value);
-                
+
+                _number = value;
             }
         }
+
+        #endregion
+
+        #region Public methods
+
+        /// <summary>
+        /// Creating a contact's phone number clone.
+        /// </summary>
+        /// <returns>Returns a contact's phone number  with cloned data.</returns>
+        public object Clone()
+        {
+            return new NumberPhone
+            { Number = Number };
+        }
+
+        #endregion
     }
 }

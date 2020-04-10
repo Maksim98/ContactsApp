@@ -1,0 +1,1 @@
+{"ContactList":[{"Phone":{"Number":79009000909},"Name":"Иван","Surname":"Смирнов","BirthDay":"2000-01-01T00:00:00","Email":"Ivan@mail.ru","VkId":"id712383132"},{"Phone":{"Number":79999009010},"Name":"Алексей","Surname":"Петров","BirthDay":"1999-12-11T00:00:00","Email":"Petrov@mail.ru","VkId":"id1238073127"}]}

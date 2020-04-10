@@ -8,9 +8,31 @@ namespace NoteApp
 {
     public class Contact: ICloneable //класс для добавления контактов
     {
-        private NumberPhone _numberPhone;
-        private String _name;
-        public String Name //поле для добавления имени
+        private NumberPhone _phone = new NumberPhone();
+        /// <summary>
+        /// Gets or sets contact's phone number.
+        /// </summary>
+        public NumberPhone Phone
+        {
+            get => _phone;
+            set
+            {
+                const long MinValueNumber = 79000000000;
+                const long MaxValueNumber = 79999999999;
+
+                if (value.Number < MinValueNumber || value.Number > MaxValueNumber)
+                {
+                    throw new ArgumentException(
+                        "Phone number must be between " + MinValueNumber + " and " +
+                        MaxValueNumber + ", but was entered " + value.Number);
+                }
+
+                _phone = value;
+            }
+        }
+
+        private String _name;//поле для добавления имени
+        public String Name 
         {
             get { return _name; }
             set
@@ -25,15 +47,15 @@ namespace NoteApp
             }
         }
     
-        private String _surname;
-        public String Surame//поле для добавления фамилии
+        private String _Surame;//поле для добавления фамилии
+        public String Surame
         {
-            get { return _surname; }
+            get { return _Surame; }
             set
             {
                 if (value.ToString().Length <= 50)
                 {
-                    _surname = Char.ToUpper(value[0]) + value.Substring(1);
+                    _Surame = Char.ToUpper(value[0]) + value.Substring(1);
                 }
                 else
                     throw new ArgumentException("Введите фамилию не длинее 50 символов " + value);

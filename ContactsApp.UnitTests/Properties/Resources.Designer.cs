@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NoteAppUI.Properties {
+namespace ContactsApp.UnitTests.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace NoteAppUI.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NoteAppUI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ContactsApp.UnitTests.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,32 +61,11 @@ namespace NoteAppUI.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Ищет локализованную строку, похожую на {&quot;ContactList&quot;:[{&quot;Phone&quot;:{&quot;Number&quot;:79009000909},&quot;Name&quot;:&quot;Иван&quot;,&quot;Surname&quot;:&quot;Смирнов&quot;,&quot;BirthDay&quot;:&quot;2000-01-01T00:00:00&quot;,&quot;Email&quot;:&quot;Ivan@mail.ru&quot;,&quot;VkId&quot;:&quot;id712383132&quot;},{&quot;Phone&quot;:{&quot;Number&quot;:79999009010},&quot;Name&quot;:&quot;Алексей&quot;,&quot;Surname&quot;:&quot;Петров&quot;,&quot;BirthDay&quot;:&quot;1999-12-11T00:00:00&quot;,&quot;Email&quot;:&quot;Petrov@mail.ru&quot;,&quot;VkId&quot;:&quot;id1238073127&quot;}]}.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_16x {
+        internal static string Test {
             get {
-                object obj = ResourceManager.GetObject("Add_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap EditPage_16x {
-            get {
-                object obj = ResourceManager.GetObject("EditPage_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Remove_16x {
-            get {
-                object obj = ResourceManager.GetObject("Remove_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Test", resourceCulture);
             }
         }
     }

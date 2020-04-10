@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using NoteApp;
 using System.Windows.Forms;
 
-namespace NoteAppUI
+namespace ContactsAppUI
 {
     static class Program
     {

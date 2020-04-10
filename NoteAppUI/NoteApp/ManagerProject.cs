@@ -8,24 +8,34 @@ using System.IO;
 
 namespace NoteApp
 {
-    class ManagerProject //класс для сохранения проекта в файл и выгрузки его обратно
+    public static class ManagerProject //класс для сохранения проекта в файл и выгрузки его обратно
     {
-        private const String FilePath = "C:\\Users\\Makse\\Documents\\ContactsApp.notes";
-
-        public Project Project { get; set; }
-
-        public void SaveToFile() //поле для сохранения в файл данных класса проекта
+        
+        private const string _name = @"\ContactsApp.notes";
+        private static readonly string _path =
+            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        private static readonly string _file = _path + _name;
+        public static void SaveToFile(Project data)
         {
-            var jsonString = JsonConvert.SerializeObject(Project.Contacts);
-            File.WriteAllText(FilePath, jsonString);
-            
+            var serializer = new JsonSerializer { Formatting = Formatting.Indented };
+            using (var sw = new StreamWriter(_file))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, data);
+            }
         }
 
-        public Project LoadFromFile() //поле для выгрузки из файла 
+        public static Project LoadFromFile()
         {
-            var file = File.ReadAllText("FilePath");
-            List<Contact> contacts = JsonConvert.DeserializeObject<List<Contact>>(file);
-            return new Project(contacts);
+            Project project = null;
+            var serializer = new JsonSerializer { Formatting = Formatting.Indented };
+            using (var sr = new StreamReader(_file))
+            using (JsonReader reader = new JsonTextReader(sr))
+            {
+                project = serializer.Deserialize<Project>(reader);
+            }
+
+            return project;
         }
     }
 }

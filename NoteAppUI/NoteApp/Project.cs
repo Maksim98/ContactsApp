@@ -10,9 +10,9 @@ namespace NoteApp
     {
         public List<Contact> Contacts { get; }
 
-        public Project(List<Contact> contacts)
+        public Project()
         {
-            Contacts = contacts;
+            Contacts = new List<Contact>();
         }
     }
 }

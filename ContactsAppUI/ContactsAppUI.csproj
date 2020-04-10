@@ -4,14 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C452953E-52F3-4FA8-BA00-0D51354612CB}</ProjectGuid>
+    <ProjectGuid>{C6E091F6-B235-44F6-8E7C-3888448A30E9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>NoteAppUI</RootNamespace>
-    <AssemblyName>NoteAppUI</AssemblyName>
+    <RootNamespace>ContactsAppUI</RootNamespace>
+    <AssemblyName>ContactsAppUI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,11 +58,11 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContactControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="ContactForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContactControl.Designer.cs">
-      <DependentUpon>ContactControl.cs</DependentUpon>
+    <Compile Include="ContactForm.Designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -69,14 +72,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SecondaryForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SecondaryForm.Designer.cs">
-      <DependentUpon>SecondaryForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="ContactControl.resx">
-      <DependentUpon>ContactControl.cs</DependentUpon>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -106,19 +106,53 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NoteApp\NoteApp.csproj">
-      <Project>{45520a57-62c3-434e-8e9c-1491ee145e7c}</Project>
-      <Name>NoteApp</Name>
+    <ProjectReference Include="..\ContactsApp\ContactsApp.csproj">
+      <Project>{fa0c9410-ea4f-4e9d-ab4e-21b2a62b6797}</Project>
+      <Name>ContactsApp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Add_16x.png" />
+    <None Include="Resources\icons8-add-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\EditPage_16x.png" />
+    <None Include="Resources\icons8-delete-16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Remove_16x.png" />
+    <None Include="Resources\icons8-edit-file-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>md $(SolutionDir)InstallScripts
+md $(SolutionDir)InstallScripts\Release
+md $(SolutionDir)InstallScripts\Installers
+
+xcopy $(ProjectDir)$(OutDir)*.exe $(SolutionDir)InstallScripts\Release
+xcopy $(ProjectDir)$(OutDir)*.dll $(SolutionDir)InstallScripts\Release
+xcopy $(ProjectDir)$(OutDir)Resources\*.ico $(SolutionDir)InstallScripts\Release
+
+call $(SolutionDir)InstallScripts\installer.iss
+
+rmdir /s /q $(SolutionDir)InstallScripts\Release</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>
