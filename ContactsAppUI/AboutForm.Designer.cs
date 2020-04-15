@@ -64,9 +64,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(16, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 17);
+            this.label3.Size = new System.Drawing.Size(153, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Author: Vladimir Belchikov";
+            this.label3.Text = "Author: Maksim Ershov";
             // 
             // label4
             // 
@@ -94,9 +94,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(16, 286);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 17);
+            this.label6.Size = new System.Drawing.Size(153, 17);
             this.label6.TabIndex = 5;
-            this.label6.Text = "2019 Vladimir Belchikov Ⓔ";
+            this.label6.Text = "2020 Ershov Maksim Ⓔ";
             // 
             // EmailLinkLabel
             // 
@@ -104,10 +104,10 @@
             this.EmailLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EmailLinkLabel.Location = new System.Drawing.Point(145, 179);
             this.EmailLinkLabel.Name = "EmailLinkLabel";
-            this.EmailLinkLabel.Size = new System.Drawing.Size(157, 17);
+            this.EmailLinkLabel.Size = new System.Drawing.Size(148, 17);
             this.EmailLinkLabel.TabIndex = 6;
             this.EmailLinkLabel.TabStop = true;
-            this.EmailLinkLabel.Text = "LaValet861@gmail.com";
+            this.EmailLinkLabel.Text = "Maksevov@gmail.com";
             this.EmailLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.EmailLinkLabel_LinkClicked);
             // 
             // GithubLinkLabel
@@ -116,10 +116,10 @@
             this.GithubLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GithubLinkLabel.Location = new System.Drawing.Point(68, 196);
             this.GithubLinkLabel.Name = "GithubLinkLabel";
-            this.GithubLinkLabel.Size = new System.Drawing.Size(202, 17);
+            this.GithubLinkLabel.Size = new System.Drawing.Size(155, 17);
             this.GithubLinkLabel.TabIndex = 7;
             this.GithubLinkLabel.TabStop = true;
-            this.GithubLinkLabel.Text = "VladimirBelchikov/ContactsApp";
+            this.GithubLinkLabel.Text = "Maksim98/ContactsApp";
             this.GithubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GithubLinkLabel_LinkClicked);
             // 
             // AboutForm

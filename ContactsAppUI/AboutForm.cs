@@ -18,7 +18,7 @@ namespace ContactsAppUI
         private void GithubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             GithubLinkLabel.Links[GithubLinkLabel.Links.IndexOf(e.Link)].Visited = true;
-            System.Diagnostics.Process.Start("www.github.com/VladimirBelchikov/ContactsApp");
+            System.Diagnostics.Process.Start("www.github.com/Maksim98/ContactsApp/");
         }
 
         private void AboutForm_KeyDown (object sender, KeyEventArgs e)
