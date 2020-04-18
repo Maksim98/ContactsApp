@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
+    // TODO: во всём классе нет xml-комментариев
     public class Contact: ICloneable //класс для добавления контактов
     {
+        // TODO: в классе сначала должны быть все поля, затем все свойства
         private NumberPhone _phone = new NumberPhone();
         /// <summary>
         /// Gets or sets contact's phone number.
@@ -17,6 +19,7 @@ namespace NoteApp
             get => _phone;
             set
             {
+                // TODO: проверка уже реализована в классе номера телефона. Здесь её быть не должно
                 const long MinValueNumber = 79000000000;
                 const long MaxValueNumber = 79999999999;
 
@@ -42,11 +45,14 @@ namespace NoteApp
                     _name = Char.ToUpper(value[0]) + value.Substring(1);
                 }
                 else
+                    // TODO: грамошибка в тексте
+                    // TODO: Здесь сообщение по-русски, в других классах и методах по-английски - откуда копировал? Сделать единообразно
                     throw new ArgumentException("Введите имя не длинее 50 символов " + value);
 
             }
         }
-    
+
+        // TODO: грамошибка в именовании, исправить везде
         private String _Surame;//поле для добавления фамилии
         public String Surame
         {
@@ -62,6 +68,7 @@ namespace NoteApp
 
             }
         }
+        // TODO: грамошибка в названии, исправить везде
         private DateTime _birthsday;//поле для добавления дня рождения
         public DateTime Birthsday
         {
@@ -93,6 +100,7 @@ namespace NoteApp
 
             }
         }
+        // TODO: переименовать в VkId - айдишников может быть много, должна быть конкретика
         private String _id;//поле для добавления id
         public String ID
         {
@@ -111,6 +119,7 @@ namespace NoteApp
 
         public object Clone()
         {
+            // TODO: должны копироваться все данные из объекта
             var contact = new Contact();
             contact.Name = Name;
             contact.Surame = Surame;

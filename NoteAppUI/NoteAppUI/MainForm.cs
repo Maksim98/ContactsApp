@@ -5,6 +5,12 @@ using System.Windows.Forms;
 
 namespace NoteAppUI
 {
+    // TODO: нет проекта с юнит-тестами - лабораторная работа №4
+    // TODO: нет автоматической сборки установщика - лабораторная №5
+    // TODO: в папке решения есть не нужный проект, навести порядок
+    // TODO: и вдруг английские комментарии...
+    // TODO: программа падает при первом запуске, когда пытаюсь добавить новый контакт и нажимаю кнопку OK
+    // TODO: где панель с днями рождений?
     /// <summary>
     /// Main application form.
     /// </summary>
@@ -54,6 +60,7 @@ namespace NoteAppUI
         /// <param name="e">An argument that stores event information.</param>
         private void AddContact(object sender, EventArgs e)
         {
+            // TODO: неправильное название формы и переменной - название не отражает назначение формы
             var secondaryForm = new SecondaryForm();
             secondaryForm.Contact = new Contact();
 

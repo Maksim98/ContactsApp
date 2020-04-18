@@ -5,6 +5,8 @@ using System.Windows.Forms;
 
 namespace NoteAppUI
 {
+    // TODO: неправильное именование формы - не отражает назначения формы
+    // TODO: форма позволяет вводить в качестве почты только цифры, остальное подчеркивает красным
     /// <summary>
     /// Form for editing and adding notes.
     /// </summary>
@@ -52,7 +54,7 @@ namespace NoteAppUI
 
                 return;
             }
-
+            // TODO: преобразования контрола в форму - недопустимое решение. Переделать без TopLevelControl
             ((Form)TopLevelControl).DialogResult = DialogResult.OK;
             ((Form)TopLevelControl)?.Close();
         }
@@ -64,6 +66,7 @@ namespace NoteAppUI
         /// <param name="e">An argument that stores event information.</param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            // TODO: (см. выше)
             ((Form)TopLevelControl).DialogResult = DialogResult.Cancel;
             ((Form)TopLevelControl)?.Close();
         }

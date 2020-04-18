@@ -245,7 +245,7 @@
             this.InfoPanel.Controls.Add(this.InfoContact);
             this.InfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InfoPanel.Location = new System.Drawing.Point(235, 3);
-            this.InfoPanel.Name = "InfoPanel"; Surame
+            this.InfoPanel.Name = "InfoPanel";
             this.InfoPanel.Size = new System.Drawing.Size(426, 371);
             this.InfoPanel.TabIndex = 2;
             // 

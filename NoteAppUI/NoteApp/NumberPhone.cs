@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
+    // TODO: порядок слов в имени класса
     /// <summary>
     /// Contact's phone number.
     /// </summary>
@@ -55,7 +56,7 @@ namespace NoteApp
         public object Clone()
         {
             return new NumberPhone
-            { Number = Number };
+            { Number = Number }; // TODO: неправильное оформление фигурных скобок
         }
 
         #endregion

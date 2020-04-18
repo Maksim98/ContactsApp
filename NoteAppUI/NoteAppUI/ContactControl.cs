@@ -86,6 +86,7 @@ namespace NoteAppUI
                 }
                 else if (value.Name == null)
                 {
+                    // TODO: дублируется с веткой выше. Избавиться от дублирования
                     SurameTextBox.Text = "";
                     NameTextBox.Text = "";
                     BirthdayDateTime.Value = DateTime.Today;

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
+    // TODO: xml
     public static class StringExtension
     {
         public static string TrimAndLower(this string str)
